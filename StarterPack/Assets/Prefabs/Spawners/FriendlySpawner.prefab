@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5309291679501435757}
   - component: {fileID: 5309291679501435756}
   m_Layer: 0
-  m_Name: SlarkSpawner
+  m_Name: FriendlySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ff75869af0de8478f59a3406577fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 0.1
-  _distanceMultiplier: 10
-  _unitPrefab: {fileID: 5610486920521742848, guid: 9c91c283cafc7f04ca9b2ffc3920ad98, type: 3}
-  _unitCount: 10
+  _delay: 0.25
+  _distanceMultiplier: 3
+  _unitPrefab: {fileID: 5610486920521742848, guid: 6464dd57a428ecc4fb166be67cd2583a, type: 3}
+  _unitCount: 20
   SpawnCost: 10
