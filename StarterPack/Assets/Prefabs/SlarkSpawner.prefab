@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ff75869af0de8478f59a3406577fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 1913383980968568276, guid: 3fc402eeb0da2a846b23fa39681415cc, type: 3}
+  _delay: 0.1
+  _distanceMultiplier: 10
+  _unitPrefab: {fileID: 5610486920521742848, guid: 9c91c283cafc7f04ca9b2ffc3920ad98, type: 3}
   _unitCount: 10
   SpawnCost: 10

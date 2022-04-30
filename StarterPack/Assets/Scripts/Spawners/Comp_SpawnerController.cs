@@ -68,9 +68,9 @@ public class Comp_SpawnerController : MonoBehaviour
     }
 
     private void AttemptToSpawn() {
-        if (_playerController.UpgradeResources >= _spawners[_activeSpawner].SpawnCost) {
+        if (_playerController.CurrentMoney >= _spawners[_activeSpawner].SpawnCost) {
             _spawners[_activeSpawner].SpawnUnits();
-            _playerController.UpgradeResources -= _spawners[_activeSpawner].SpawnCost;
+            _playerController.CurrentMoney -= _spawners[_activeSpawner].SpawnCost;
         }
     }
 
