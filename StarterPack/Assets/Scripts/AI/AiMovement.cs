@@ -9,13 +9,43 @@ public class AiMovement : MonoBehaviour
 
     [SerializeField]float moveSpeed = 1;
     [SerializeField]float acceptedRange = 0;
+    [SerializeField][Tooltip("Should these field take " +
+    "precedence over those in a Comp_UnitInfo component" +
+    "attached of this GameObject?")] bool overrideUnitInfo = false;
 
     Vector2 targetPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (!overrideUnitInfo)
+        {
+            Comp_UnitInfo unitOverride = gameObject.GetComponent<Comp_UnitInfo>();
+            if (unitOverride != null)
+            {
+                moveSpeed = unitOverride.Speed;
+            }
+        }
+    }
 
+    public void SetMoveSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    public void SetAcceptedRange(float newRange)
+    {
+        acceptedRange = newRange;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
+    public float GetAcceptedRange()
+    {
+        return acceptedRange;
     }
 
     //START moving to position. Execution will continue without waiting for it to be done.

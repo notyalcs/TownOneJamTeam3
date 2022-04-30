@@ -13,7 +13,7 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public float AttackRange;
     [SerializeField] public float Speed;
 
-    [SerializeField] public void TakeDamage(int DamageToTake)
+    [SerializeField] public void TakeDamage(float DamageToTake)
     {
         Health -= DamageToTake;
     }
