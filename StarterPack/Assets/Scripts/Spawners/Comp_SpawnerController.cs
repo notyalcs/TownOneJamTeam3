@@ -25,8 +25,6 @@ public class Comp_SpawnerController : MonoBehaviour
     }
 
     private void Update() {
-        //AttemptToSpawn();
-
         if (!_leftShoulderActive && Input.GetAxisRaw(_leftShoulder) != 0) {
             _leftShoulderActive = true;
 

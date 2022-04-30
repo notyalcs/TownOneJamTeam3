@@ -7,6 +7,7 @@ public class Comp_Spawner : MonoBehaviour
     [Header("Spawn Info")]
     [SerializeField] private float _delay = 0.1f;
     [SerializeField] private float _distanceMultiplier = 10.0f;
+    [SerializeField] private float _angleOffset = 1.0f;
 
     [Header("Unit Info")]
     [SerializeField] private GameObject _unitPrefab;
@@ -31,7 +32,7 @@ public class Comp_Spawner : MonoBehaviour
     private IEnumerator InstantiateUnit() {
         for (int i = 0; i < _unitCount; ++i) {
             _position = GetComponentInParent<Transform>().position;
-            Vector3 spawnLocation = new Vector3(_spawnDirection.x, _spawnDirection.y, 0) * (Random.value * _distanceMultiplier);
+            Vector3 spawnLocation = new Vector3(_spawnDirection.x + Random.value * _angleOffset, _spawnDirection.y + Random.value * _angleOffset, 0) * (Random.value * _distanceMultiplier);
             Instantiate(_unitPrefab, spawnLocation + _position, Quaternion.identity);
             yield return new WaitForSeconds(_delay);
         }
