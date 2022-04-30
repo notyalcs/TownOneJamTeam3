@@ -48,7 +48,7 @@ public class Train : MonoBehaviour
             _curPosition = 0.0f;
         }
 
-        if (Input.GetKeyDown("q") && _tail == null)
+        if (Input.GetKeyDown(KeyCode.P) && _tail == null)
         {
             AddFollowTrain(TrainType.Engine);
         }
