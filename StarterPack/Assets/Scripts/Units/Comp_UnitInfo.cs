@@ -11,6 +11,7 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public float Armor;
     [SerializeField] public float AttackDamage;
     [SerializeField] public float AttackRange;
+    [SerializeField] public float AttackSpeed;
     [SerializeField] public float Speed;
 
     [SerializeField] public void TakeDamage(float DamageToTake)
