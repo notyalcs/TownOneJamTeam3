@@ -6,10 +6,17 @@ public class Comp_UnitInfo : MonoBehaviour
 {
     
     [Header("Unit Info")]
+    [SerializeField] public Constants.AlienTypes Species;
     [SerializeField] public float Health;
     [SerializeField] public float Armor;
     [SerializeField] public float AttackDamage;
     [SerializeField] public float AttackRange;
     [SerializeField] public float Speed;
+
+    [SerializeField] public void TakeDamage(int DamageToTake)
+    {
+        Health -= DamageToTake;
+    }
+
 
 }
