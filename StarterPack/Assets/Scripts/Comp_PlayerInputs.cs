@@ -26,27 +26,27 @@ public class PlayerInput
 
 public class Comp_PlayerInputs : MonoBehaviour
 {
-    [SerializeField] public PlayerInput _up;
-    [SerializeField] public PlayerInput _down;
-    [SerializeField] public PlayerInput _left;
-    [SerializeField] public PlayerInput _right;
+    [SerializeField] public PlayerInput Up;
+    [SerializeField] public PlayerInput Down;
+    [SerializeField] public PlayerInput Left;
+    [SerializeField] public PlayerInput Right;
 
     public float GetAxisVerticalRaw()
     {
-        if (_up.GetKey() && _down.GetKey()) { return 0.0f; }
+        if (Up.GetKey() && Down.GetKey()) { return 0.0f; }
 
-        if (_up.GetKey()) { return 1.0f; }
-        if (_down.GetKey()) { return -1.0f; }
+        if (Up.GetKey()) { return 1.0f; }
+        if (Down.GetKey()) { return -1.0f; }
 
         return 0.0f;
     }
 
     public float GetAxisHorizontalRaw()
     {
-        if (_left.GetKey() && _right.GetKey()) { return 0.0f; }
+        if (Left.GetKey() && Right.GetKey()) { return 0.0f; }
 
-        if (_right.GetKey()) { return 1.0f; }
-        if (_left.GetKey()) { return -1.0f; }
+        if (Right.GetKey()) { return 1.0f; }
+        if (Left.GetKey()) { return -1.0f; }
 
         return 0.0f;
     }

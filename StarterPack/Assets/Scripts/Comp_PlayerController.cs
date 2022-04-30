@@ -17,19 +17,19 @@ public class Comp_PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_inputs._up.GetKey())
+        if (_inputs.Up.GetKey())
         {
             Debug.Log("Up");
         }
-        if (_inputs._down.GetKey())
+        if (_inputs.Down.GetKey())
         {
             Debug.Log("Down");
         }
-        if (_inputs._right.GetKey())
+        if (_inputs.Right.GetKey())
         {
             Debug.Log("Right");
         }
-        if (_inputs._left.GetKey())
+        if (_inputs.Left.GetKey())
         {
             Debug.Log("Left");
         }
