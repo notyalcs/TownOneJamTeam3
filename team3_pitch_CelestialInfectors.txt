@@ -1,0 +1,25 @@
+Town One
+Team #3 - Space Hamsters
+
+Game:
+Celestial Infectors
+
+What is it:
+- The player is a zombie hive mind that is trying to infect as many planets as possible while protecting your current cargo and units.
+
+Genre:
+- Strategy - Reverse Tower Defense
+- Roguelike elements
+
+Mechanics:
+- Top down, isometric 2D. Player controls the overall train path, the units that are being spawned, and the direction the units are spawned.
+- Each planet you conquer, you get the race as a new unit that you can use for future planets.
+- There are pit stops between planets where you can enhance units.
+
+Platform:
+- PC game with keyboard/mouse and controller support.
+- Touch screen controls will try and be implemented for a mobile port.
+
+Audience:
+- People that like strategy and mayhem.
+
