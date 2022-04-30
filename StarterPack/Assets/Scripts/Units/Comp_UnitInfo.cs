@@ -16,6 +16,10 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public void TakeDamage(float DamageToTake)
     {
         Health -= DamageToTake;
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 

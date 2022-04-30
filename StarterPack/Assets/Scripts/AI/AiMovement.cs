@@ -9,9 +9,9 @@ public class AiMovement : MonoBehaviour
 
     [SerializeField]float moveSpeed = 1;
     [SerializeField]float acceptedRange = 0;
-    [SerializeField][Tooltip("Should these field take " +
+    [SerializeField][Tooltip("Should these fields take " +
     "precedence over those in a Comp_UnitInfo component" +
-    "attached of this GameObject?")] bool overrideUnitInfo = false;
+    "attached to this GameObject?")] bool overrideUnitInfo = false;
 
     Vector2 targetPos;
 

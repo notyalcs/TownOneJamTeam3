@@ -8,9 +8,9 @@ public class AiAttack : MonoBehaviour
     [SerializeField] float range = 0;
     [SerializeField] float damage = 1;
     [SerializeField] float attackSpeed = 1;
-    [SerializeField][Tooltip("Should these field take " +
+    [SerializeField][Tooltip("Should these fields take " +
         "precedence over those in a Comp_UnitInfo component" +
-        "attached of this GameObject?")] bool overrideUnitInfo = false;
+        "attached to this GameObject?")] bool overrideUnitInfo = false;
 
     //Check range and attack the target if withing range.
     public bool Attack(GameObject target)
