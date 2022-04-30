@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Comp_UnitInfo : MonoBehaviour
+public class Comp_UnitInfo_TEMP : MonoBehaviour
 {
 
     [SerializeField] public float Health = 20.0f;
