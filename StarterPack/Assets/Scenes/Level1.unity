@@ -1021,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainPath
       objectReference: {fileID: 0}
+    - target: {fileID: 594501375883239559, guid: 4022c7cd643c64c42979a513ca3e3306, type: 3}
+      propertyPath: _railSteps
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 1215520092003064857, guid: 4022c7cd643c64c42979a513ca3e3306, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
