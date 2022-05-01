@@ -13,6 +13,8 @@ public class StarSpawner : MonoBehaviour
     [SerializeField, Range(0, 500)] private int _maxOutOfBounds = 100;
     [SerializeField] private int _maxStars = 200;
 
+    private GameObject _manager;
+
     private float _timeSinceLastSpawn = 0;
     private int StarCount { get { return gameObject.transform.childCount; } }
 
@@ -23,6 +25,9 @@ public class StarSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _manager = GameObject.FindGameObjectWithTag("GameManager");
+        _train = _manager.GetComponent<GameManager>()._engine.GetComponent<Train>();
+
         for (int i = 0; i < _spawnCount; i++)
         {
             float xPos = Random.Range(-_maxOutOfBounds, Screen.width + _maxOutOfBounds);
