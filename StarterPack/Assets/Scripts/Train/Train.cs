@@ -1,5 +1,3 @@
-#define DEBUG
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,7 +45,7 @@ public class Train : MonoBehaviour
 #if DEBUG
         if (Input.GetAxisRaw("Fire1") != 0)
         {
-            _curPosition = 0.0f;
+            // _curPosition = 0.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.P) && _tail == null)
