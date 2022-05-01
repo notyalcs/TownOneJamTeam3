@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2811180471770753975}
   - component: {fileID: 2811180471770753968}
   - component: {fileID: 2811180471770753974}
+  - component: {fileID: 8446384321496168316}
   m_Layer: 0
   m_Name: Engine
-  m_TagString: Untagged
+  m_TagString: Train
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +98,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _path: {fileID: 0}
-  _speed: 0.005
+  _speed: 0.5
   _followDistance: 0.02
   _head: {fileID: 0}
   _tail: {fileID: 0}
   _length: 0.2
+--- !u!58 &8446384321496168316
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811180471770753969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.44, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15

@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Star
+    uniqueID: 3213882011
+    locked: 0
   - name: Track
     uniqueID: 1199290899
     locked: 0

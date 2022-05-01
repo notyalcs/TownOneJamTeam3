@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &871865525336429711
+--- !u!1 &5610486920521742848
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1112171281755996194}
-  - component: {fileID: 2685016854269923985}
-  - component: {fileID: 1181244399529163195}
-  m_Layer: 0
-  m_Name: ZombieHamsterReal
+  - component: {fileID: 5610486920521742853}
+  - component: {fileID: 5610486920521742850}
+  - component: {fileID: 1924696006861120069}
+  m_Layer: 12
+  m_Name: PlayerSlarkOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1112171281755996194
+--- !u!4 &5610486920521742853
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871865525336429711}
+  m_GameObject: {fileID: 5610486920521742848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.45, y: -1.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2685016854269923985
+--- !u!212 &5610486920521742850
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871865525336429711}
+  m_GameObject: {fileID: 5610486920521742848}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.096787095, g: 0.8207547, b: 0.3751361, a: 1}
+  m_Color: {r: 0, g: 0.9254902, b: 0.068152755, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,20 +83,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1181244399529163195
+--- !u!114 &1924696006861120069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871865525336429711}
+  m_GameObject: {fileID: 5610486920521742848}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45b23470e4ca8b74c99aa691e5227565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
-  Armor: 10
-  AttackDamage: 5
-  AttackRange: 1
+  Species: 0
+  Health: 50
+  Armor: 0
+  AttackDamage: 10
+  AttackRange: 0.3
+  AttackSpeed: 1
   Speed: 1
