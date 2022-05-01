@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1795851733816385311}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d67d6ec693c4f43b7ba4ed095832c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeResources: 50
-  TrainHealth: 100
   CurrentMoney: 50
 --- !u!114 &1795851733816385311
 MonoBehaviour:
@@ -59,7 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3356fc4fdafc18e4382b90ed8eaefd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonContainerInstance: {fileID: 0}
+  _selectionItemPrefab: {fileID: 1930637887291712379, guid: 53e38b829f897934cbb901d9e5c0bec7, type: 3}
   _activeSpawner: 0
   _spawners:
   - {fileID: 0}
   - {fileID: 0}
+  _cannonBase: {fileID: 0}
+  _cannonDistance: 1

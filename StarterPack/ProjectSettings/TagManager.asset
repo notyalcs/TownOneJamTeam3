@@ -7,6 +7,7 @@ TagManager:
   - Train
   - GameManager
   - Tier
+  - AddableContaier
   layers:
   - Default
   - TransparentFX

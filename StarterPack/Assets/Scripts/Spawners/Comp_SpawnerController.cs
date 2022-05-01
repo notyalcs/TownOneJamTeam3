@@ -29,6 +29,7 @@ public class Comp_SpawnerController : MonoBehaviour
     private Vector3 _spawnDirection;
 
     private void Start() {
+        _buttonContainerInstance = GameObject.FindGameObjectWithTag("AddableContaier");
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
         for(int i = 0; i < _spawners.Count; i++)

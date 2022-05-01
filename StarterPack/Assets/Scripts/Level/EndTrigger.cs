@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EndTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Train"))
         {
             IsLevelOver = true;
+            //SceneManager.LoadScene("Demo Starmap");
         }
     }
 }
