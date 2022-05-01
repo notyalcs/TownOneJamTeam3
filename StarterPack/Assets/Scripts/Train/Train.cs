@@ -28,8 +28,9 @@ public class Train : MonoBehaviour
     private enum TrainType
     { 
         Engine,
-        Follow1,
-        Follow2,
+        Passenger,
+        Cart,
+        Caboose,
         Count
     }
 
@@ -50,7 +51,7 @@ public class Train : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && _tail == null)
         {
-            AddFollowTrain(TrainType.Engine);
+            AddFollowTrain(TrainType.Passenger);
         }
 #endif
 
@@ -97,8 +98,8 @@ public class Train : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(_back, 0.2f);
+        Gizmos.DrawSphere(_back, 0.5f);
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(_front, 0.2f);
+        Gizmos.DrawSphere(_front, 0.5f);
     }
 }
