@@ -7,6 +7,7 @@ public class Comp_Spawner : MonoBehaviour
     [Header("Spawn Info")]
     [SerializeField] private float _delay = 0.1f;
     [SerializeField] private float _distanceMultiplier = 10.0f;
+    [SerializeField] private float _angleOffset = 1.0f;
 
     [Header("Unit Info")]
     [SerializeField] private GameObject _unitPrefab;
@@ -18,11 +19,11 @@ public class Comp_Spawner : MonoBehaviour
     private Vector3 _position;
     private Vector2 _spawnDirection;
 
-    public void SpawnUnits() {
-        _position = GetComponentInParent<Transform>().position;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+    public void SpawnUnits(Vector3 spawnDirection3D) {
+        //_position = GetComponentInParent<Transform>().position;
+        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 
-        Vector3 spawnDirection3D = mousePos - _position;
+        //Vector3 spawnDirection3D = mousePos - _position;
         _spawnDirection = new Vector2(spawnDirection3D.x, spawnDirection3D.y).normalized;
 
         StartCoroutine(InstantiateUnit());
@@ -31,8 +32,9 @@ public class Comp_Spawner : MonoBehaviour
     private IEnumerator InstantiateUnit() {
         for (int i = 0; i < _unitCount; ++i) {
             _position = GetComponentInParent<Transform>().position;
-            Vector3 spawnLocation = new Vector3(_spawnDirection.x, _spawnDirection.y, 0) * (Random.value * _distanceMultiplier);
+            Vector3 spawnLocation = new Vector3(_spawnDirection.x + Random.value * _angleOffset, _spawnDirection.y + Random.value * _angleOffset, 0) * (Random.value * _distanceMultiplier);
             Instantiate(_unitPrefab, spawnLocation + _position, Quaternion.identity);
+
             yield return new WaitForSeconds(_delay);
         }
     }

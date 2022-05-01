@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5610486920521742853}
   - component: {fileID: 5610486920521742850}
   - component: {fileID: 1924696006861120069}
-  m_Layer: 13
-  m_Name: Slark
+  m_Layer: 12
+  m_Name: PlayerSlarkOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5610486920521742848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: 2.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9254902, g: 0.20678338, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.9254902, b: 0.068152755, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   Species: 0
   Health: 50
   Armor: 0
-  AttackDamage: 0
-  AttackRange: 0
-  AttackSpeed: 0
-  Speed: 0
+  AttackDamage: 10
+  AttackRange: 0.3
+  AttackSpeed: 1
+  Speed: 1

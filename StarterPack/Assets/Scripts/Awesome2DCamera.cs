@@ -24,6 +24,8 @@ public class Awesome2DCamera : MonoBehaviour {
     private float maxX = 0f;
     private float minY = 0f;
     private float maxY = 0f;
+
+    [SerializeField] private Camera thisCamera;
   
     void Start () {
         // the map MinX and MinY are the position that the camera STARTS
@@ -49,6 +51,21 @@ public class Awesome2DCamera : MonoBehaviour {
 
         // set the camera to go to the wanted position in a certain amount of time
         transform.position = Vector3.Lerp (transform.position, wantedPosition, (Time.deltaTime * damping));
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            StartCoroutine(IncreaseCameraSize(thisCamera.orthographicSize + 5, thisCamera.orthographicSize, 1.0f));
+        }
+    }
+
+
+    IEnumerator IncreaseCameraSize(float targetSize, float originalSize, float maxSpeed)
+    {
+        float velocity = 0.0f;
+        while (!Mathf.Approximately(thisCamera.orthographicSize, targetSize)) {
+            thisCamera.orthographicSize = Mathf.SmoothDamp(originalSize, targetSize, ref velocity, maxSpeed);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
 /*

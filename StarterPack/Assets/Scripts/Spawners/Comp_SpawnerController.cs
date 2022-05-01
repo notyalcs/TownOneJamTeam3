@@ -9,6 +9,10 @@ public class Comp_SpawnerController : MonoBehaviour
     [SerializeField] private int _activeSpawner = 0;
     [SerializeField] private List<Comp_Spawner> _spawners;
 
+    [Header("Cannon")]
+    [SerializeField] private GameObject _cannonBase;
+    [SerializeField] private float _cannonDistance = 1.0f;
+
     private const string _leftShoulder = "Fire1";
     private const string _rightShoulder = "Fire2";
     private const string _spawnButton = "Fire3";
@@ -19,13 +23,21 @@ public class Comp_SpawnerController : MonoBehaviour
 
     private Comp_PlayerController _playerController;
 
+    private Vector3 _spawnDirection;
+
     private void Start() {
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
     }
 
     private void Update() {
-        //AttemptToSpawn();
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        _spawnDirection = mousePos - transform.position;
+
+        Vector3 newSpawnDirection = new Vector3(_spawnDirection.x, _spawnDirection.y, 0).normalized;
+
+        _cannonBase.transform.position = transform.position + newSpawnDirection * _cannonDistance;
+        _cannonBase.transform.right = newSpawnDirection;
 
         if (!_leftShoulderActive && Input.GetAxisRaw(_leftShoulder) != 0) {
             _leftShoulderActive = true;
@@ -69,7 +81,7 @@ public class Comp_SpawnerController : MonoBehaviour
 
     private void AttemptToSpawn() {
         if (_playerController.CurrentMoney >= _spawners[_activeSpawner].SpawnCost) {
-            _spawners[_activeSpawner].SpawnUnits();
+            _spawners[_activeSpawner].SpawnUnits(_spawnDirection);
             _playerController.CurrentMoney -= _spawners[_activeSpawner].SpawnCost;
         }
     }
