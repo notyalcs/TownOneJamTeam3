@@ -10,7 +10,7 @@ public class Comp_Spawner : MonoBehaviour
     [SerializeField] private float _angleOffset = 1.0f;
 
     [Header("Unit Info")]
-    [SerializeField] private GameObject _unitPrefab;
+    [SerializeField] public GameObject _unitPrefab;
     [SerializeField] private int _unitCount = 5;
 
     [Header("Cost")]

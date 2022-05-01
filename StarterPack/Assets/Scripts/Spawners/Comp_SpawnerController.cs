@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Comp_SpawnerController : MonoBehaviour
 {
+    [Header("UI Setup")]
+    [SerializeField] private GameObject SelectionButtonContainerInstance;
+    [SerializeField] private GameObject ItemPanelPrefab;
 
     [Header("Spawners")]
     [SerializeField] private int _activeSpawner = 0;
@@ -28,6 +31,17 @@ public class Comp_SpawnerController : MonoBehaviour
     private void Start() {
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
+        for(int i = 0; i < _spawners.Count; i++)
+        {
+            GameObject fresh = Instantiate(ItemPanelPrefab);
+            fresh.GetComponent<SpawnableElement>().Initialize(_spawners[i], i, this);
+            fresh.transform.parent = SelectionButtonContainerInstance.transform;
+        }
+    }
+
+    public void SetSelectedIndex(int index)
+    {
+        _activeSpawner = index;
     }
 
     private void Update() {
