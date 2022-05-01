@@ -283,15 +283,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d1f1e9cd17a781a49bca640d97e4708e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 280efea26d659ac4898393f901b256ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.38, y: 5.38}
+  m_Size: {x: 2.7, y: 2.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &102652382
@@ -855,9 +855,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 607084363282692294, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 607084363282692294, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 607084363282692294, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1f1e9cd17a781a49bca640d97e4708e, type: 3}
+      objectReference: {fileID: 21300000, guid: 280efea26d659ac4898393f901b256ae, type: 3}
     - target: {fileID: 607084363282692295, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
       propertyPath: SceneName
       value: PitStopMenu
@@ -871,9 +879,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 607084364000862237, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 607084364000862237, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 607084364000862237, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1f1e9cd17a781a49bca640d97e4708e, type: 3}
+      objectReference: {fileID: 21300000, guid: 280efea26d659ac4898393f901b256ae, type: 3}
     - target: {fileID: 607084364000862242, guid: 21ad2c628e041844495f58026f504ce4, type: 3}
       propertyPath: SceneName
       value: PitStopMenu
