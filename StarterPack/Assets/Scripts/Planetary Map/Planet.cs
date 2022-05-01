@@ -23,6 +23,27 @@ public class Planet : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+        Comp_MenuAudio audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
+
+        audioManager.ButtonSFX();
+        audioManager.MenuMusicStop();
+
+        switch (gameObject.GetComponentInParent<Tier>().tier)
+        {
+            case 1:
+                audioManager.Stage1MusicPlay();
+                break;
+            case 2:
+                audioManager.PitStopMusicStart();
+                break;
+            case 3:
+                audioManager.Stage2MusicPlay();
+                break;
+            default:
+                break;
+        }
+
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().difficulty = gameObject.GetComponentInParent<Tier>().Difficulty;
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier = gameObject.GetComponentInParent<Tier>().tier + 1;
         SceneManager.LoadScene(SceneName);
