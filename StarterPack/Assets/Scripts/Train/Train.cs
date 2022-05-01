@@ -25,6 +25,8 @@ public class Train : MonoBehaviour
     private Vector2 _front = Vector2.zero;
     private Vector2 _back = Vector2.zero;
 
+    public Vector2 Forward { get { return _front - _back; } }
+
     private enum TrainType
     { 
         Engine,
