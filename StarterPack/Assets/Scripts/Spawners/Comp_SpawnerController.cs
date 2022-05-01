@@ -5,8 +5,8 @@ using UnityEngine;
 public class Comp_SpawnerController : MonoBehaviour
 {
     [Header("UI Setup")]
-    [SerializeField] private GameObject SelectionButtonContainerInstance;
-    [SerializeField] private GameObject ItemPanelPrefab;
+    [SerializeField] private GameObject _buttonContainerInstance;
+    [SerializeField] private GameObject _selectionItemPrefab;
 
     [Header("Spawners")]
     [SerializeField] private int _activeSpawner = 0;
@@ -33,9 +33,9 @@ public class Comp_SpawnerController : MonoBehaviour
         _activeSpawner = 0;
         for(int i = 0; i < _spawners.Count; i++)
         {
-            GameObject fresh = Instantiate(ItemPanelPrefab);
+            GameObject fresh = Instantiate(_selectionItemPrefab);
             fresh.GetComponent<SpawnableElement>().Initialize(_spawners[i], i, this);
-            fresh.transform.parent = SelectionButtonContainerInstance.transform;
+            fresh.transform.parent = _buttonContainerInstance.transform;
         }
     }
 
