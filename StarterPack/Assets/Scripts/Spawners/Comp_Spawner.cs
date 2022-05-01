@@ -19,11 +19,11 @@ public class Comp_Spawner : MonoBehaviour
     private Vector3 _position;
     private Vector2 _spawnDirection;
 
-    public void SpawnUnits() {
-        _position = GetComponentInParent<Transform>().position;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+    public void SpawnUnits(Vector3 spawnDirection3D) {
+        //_position = GetComponentInParent<Transform>().position;
+        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 
-        Vector3 spawnDirection3D = mousePos - _position;
+        //Vector3 spawnDirection3D = mousePos - _position;
         _spawnDirection = new Vector2(spawnDirection3D.x, spawnDirection3D.y).normalized;
 
         StartCoroutine(InstantiateUnit());
