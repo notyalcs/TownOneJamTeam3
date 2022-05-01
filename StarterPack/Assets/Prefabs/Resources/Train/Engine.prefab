@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _path: {fileID: 0}
-  _speed: 0.005
+  _speed: 0.5
   _followDistance: 0.02
   _head: {fileID: 0}
   _tail: {fileID: 0}
