@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Back
+    uniqueID: 1446758271
+    locked: 0
   - name: Star
     uniqueID: 3213882011
     locked: 0
