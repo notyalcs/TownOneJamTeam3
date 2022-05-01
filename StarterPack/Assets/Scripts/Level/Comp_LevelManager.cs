@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Comp_LevelManager : MonoBehaviour
 {
+    [Header("Train Info")]
+    [SerializeField] public GameObject Train;
 
     [Header("Enemy Info")]
     [SerializeField] public int EnemyCount = 0;

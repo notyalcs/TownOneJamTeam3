@@ -7,7 +7,7 @@ public class AiController : MonoBehaviour
 
     Comp_UnitInfo unitInfo;
 
-    [SerializeField] GameObject objectiveTarget;
+    [SerializeField] public GameObject objectiveTarget;
 
     ContactFilter2D sensorFilter;
 
@@ -53,18 +53,25 @@ public class AiController : MonoBehaviour
     IEnumerator AttackObjective()
     {
         coroutineTalkIsMovingOnObjective = true;
-        
+
         movement.MoveTo(objectiveTarget.transform.position);
+
         StartCoroutine(attack.ContiniousAttack(objectiveTarget));
 
         Comp_UnitInfo target_cui = objectiveTarget.GetComponent<Comp_UnitInfo>();
 
         while(target_cui.Health > 0)
         {
+
             if (!coroutineTalkIsMovingOnObjective)
             {
                 yield break;
             }
+
+            Debug.Log("ASFHUDHSGIUHE");
+
+            movement.MoveTo(objectiveTarget.transform.position);
+
             yield return null;
         }
 
@@ -118,7 +125,9 @@ public class AiController : MonoBehaviour
                     {
                     Debug.Log("asdf");
                         StartCoroutine(AttackObjective());
-                    }
+                    } else if (objectiveTarget == null) {
+//                    yield return null;
+                }
             }
             if(unitInfo == null || unitInfo.Health <= 0)
             {
@@ -158,6 +167,9 @@ public class AiController : MonoBehaviour
 
         movement.SetAcceptedRange(attack.GetRange());
 
+        if (objectiveTarget == null) {
+            objectiveTarget = GameObject.FindGameObjectWithTag("Train");
+        }
 
         StartCoroutine(attackObjectiveWithDistractions());
 
