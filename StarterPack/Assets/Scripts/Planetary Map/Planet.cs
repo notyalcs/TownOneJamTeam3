@@ -47,6 +47,7 @@ public class Planet : MonoBehaviour
                 break;
         }
 
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier > Constants.Levels) { return; }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().difficulty = gameObject.GetComponentInParent<Tier>().Difficulty;
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier = gameObject.GetComponentInParent<Tier>().tier + 1;
         SceneManager.LoadScene(SceneName);
