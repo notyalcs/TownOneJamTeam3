@@ -7,6 +7,7 @@ public static class Constants
     public static float AlienTypesLength = 6.0f;
     public enum AlienTypes
     {
+        TRAIN,
         HAMSTER,
         FAST,
         ARMOUR,
