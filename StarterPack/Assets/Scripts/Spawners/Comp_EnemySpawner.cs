@@ -26,7 +26,8 @@ public class Comp_EnemySpawner : MonoBehaviour
             float spawnX = transform.position.x + Random.value * _spawnRadius - (_spawnRadius / 2);
             float spawnY = transform.position.y + Random.value * _spawnRadius - (_spawnRadius / 2);
 
-            Instantiate(_unitPrefab, new Vector3(spawnX, spawnY, 0), Quaternion.identity);
+            GameObject newUnit = Instantiate(_unitPrefab, new Vector3(spawnX, spawnY, 0), Quaternion.identity);
+            //newUnit.GetComponent<AiController>().objectiveTarget = gameObject.transform.parent.gameObject.GetComponent<Comp_LevelManager>().Train;
 
             yield return new WaitForSeconds(_spawnSpeed);
         }
