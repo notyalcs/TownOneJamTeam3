@@ -38,7 +38,7 @@ public class Train : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
