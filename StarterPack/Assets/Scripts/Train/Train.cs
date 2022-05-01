@@ -58,7 +58,7 @@ public class Train : MonoBehaviour
 
         if (_head == null)
         {
-            _curPosition += _speed;
+            _curPosition += _speed * Time.deltaTime;
             Vector2 centerPos = _path.GetPathPosition(_curPosition);
             // Vector2 lookDir = _path.GetPathDirection(_curPosition).normalized;
             _front = _path.GetPathPosition(_curPosition + _length);
