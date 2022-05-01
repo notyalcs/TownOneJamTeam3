@@ -15,8 +15,10 @@ public class SpawnableElement : MonoBehaviour
         spawnerController = controller;
         spawner = spn;
         thisItemIndex = index;
-        UnityEngine.UI.Image img = GetComponentInChildren<UnityEngine.UI.Image>();
-        img.sprite = spn._unitPrefab.GetComponent<Sprite>();
+        UnityEngine.UI.Image img =  transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Image>();
+        SpriteRenderer sr = spn._unitPrefab.GetComponent<SpriteRenderer>();
+        img.sprite = sr.sprite;
+        img.color = sr.color;
         UnityEngine.UI.Text text = GetComponentInChildren<UnityEngine.UI.Text>();
         text.text = spn.SpawnCost.ToString();
     }
