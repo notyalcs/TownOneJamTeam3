@@ -10,7 +10,7 @@ public class Train : MonoBehaviour
     [SerializeField] private float _health;
 
     [Header("Train Movement")]
-    [SerializeField] private TrainPath _path;
+    [SerializeField] public TrainPath _path;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _followDistance;
