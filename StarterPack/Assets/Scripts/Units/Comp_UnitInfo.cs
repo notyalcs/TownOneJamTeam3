@@ -14,7 +14,7 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public float AttackSpeed;
     [SerializeField] public float Speed;
 
-    [SerializeField] public void TakeDamage(float DamageToTake)
+    [SerializeField] public virtual void TakeDamage(float DamageToTake)
     {
         Health -= DamageToTake;
         if(Health <= 0)
