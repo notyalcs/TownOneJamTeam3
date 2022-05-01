@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be5a6105904d004bad3c87e636674c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smearModifier: 1.51
+  _xSmearModifier: 0.72
+  _ySmearModifier: 1.52
   _finalScaleModifier: 0.4
   _maxRandomSize: 1
   _color: {r: 1, g: 1, b: 1, a: 1}

@@ -7,7 +7,8 @@ public class SpeedStars : MonoBehaviour
     private Train _train;
 
     [Header("Twiddles")]
-    [SerializeField, Range(0, 2)] private float _smearModifier = 1.0f;
+    [SerializeField, Range(0, 2)] private float _xSmearModifier = 1.0f;
+    [SerializeField, Range(0, 2)] private float _ySmearModifier = 1.0f;
     [SerializeField] private float _finalScaleModifier = 0.2f;
     [SerializeField, Range(0, 1)] private float _maxRandomSize = 1.0f;
     [SerializeField] private Color _color;
@@ -40,12 +41,14 @@ public class SpeedStars : MonoBehaviour
             _spriteRenderer.color = c;
         }
 
-        float xSmear = Mathf.Sqrt(_train.Forward.x * _train.Forward.x + _train.Forward.y * _train.Forward.y) * _smearModifier;
-        if (xSmear < 1) xSmear = 1;
+        float smear = Mathf.Sqrt(_train.Forward.x * _train.Forward.x + _train.Forward.y * _train.Forward.y);
+        Vector3 curScale = Vector3.one;
+        if (smear > 1)
+        {
+            curScale.x = smear * _xSmearModifier;
+            curScale.y = (1 / smear) * _ySmearModifier;
+        }
 
-        Vector3 curScale = gameObject.transform.localScale;
-        curScale.x = xSmear;
-        curScale.y = 1 / xSmear;
         gameObject.transform.localScale = curScale * _finalScaleModifier * _randomSize;
         gameObject.transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * Mathf.Atan2(_train.Forward.y, _train.Forward.x), Vector3.forward);
     }
