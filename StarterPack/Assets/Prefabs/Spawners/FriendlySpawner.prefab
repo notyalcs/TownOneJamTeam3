@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delay: 0.25
   _distanceMultiplier: 3
+  _angleOffset: 1
   _unitPrefab: {fileID: 5610486920521742848, guid: 6464dd57a428ecc4fb166be67cd2583a, type: 3}
-  _unitCount: 20
-  SpawnCost: 10
+  _unitCount: 1
+  SpawnCost: 1

@@ -30,13 +30,13 @@ public class AiAttack : MonoBehaviour
     {
         if (IsInRange(target.gameObject))
         {
-            Debug.Log("Making CUI attack.");
+//            Debug.Log("Making CUI attack.");
             target.GetComponent<Comp_UnitInfo>().TakeDamage(damage);
             return true;
         }
         else
         {
-            Debug.Log("Out of range on CUI attack.");
+//            Debug.Log("Out of range on CUI attack.");
             return false;
         }
     }
@@ -46,7 +46,7 @@ public class AiAttack : MonoBehaviour
     public IEnumerator ContiniousAttack(GameObject target)
     {
         Comp_UnitInfo targetInfo = target.GetComponent<Comp_UnitInfo>();
-        while(targetInfo.Health > 0)
+        while(target != null && targetInfo.Health > 0)
         {
             Attack(targetInfo);
             yield return new WaitForSeconds(attackSpeed);

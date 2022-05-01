@@ -11,6 +11,8 @@ public class AiController : MonoBehaviour
 
     ContactFilter2D sensorFilter;
 
+    Coroutine attackCoroutine;
+
     [Header("Sensor")]
     [SerializeField] Collider2D sensor;
     [SerializeField][Tooltip("Should this field be " +
@@ -36,7 +38,11 @@ public class AiController : MonoBehaviour
     {
         coroutineTalkIsDistracted = true;
         coroutineTalkIsMovingOnObjective = false;
-        StartCoroutine(attack.ContiniousAttack(distraction));
+        if (attackCoroutine != null)
+        {
+            StopCoroutine(attackCoroutine);
+        }
+        attackCoroutine = StartCoroutine(attack.ContiniousAttack(distraction));
 
         Comp_UnitInfo target_cui = distraction.GetComponent<Comp_UnitInfo>();
 
@@ -47,7 +53,7 @@ public class AiController : MonoBehaviour
         }
         coroutineTalkIsDistracted = false;
         coroutineTalkIsMovingOnObjective = false;
-        Debug.Log(gameObject.name + " finished distraction");
+//        Debug.Log(gameObject.name + " finished distraction");
     }
 
     IEnumerator AttackObjective()
@@ -56,19 +62,26 @@ public class AiController : MonoBehaviour
 
         movement.MoveTo(objectiveTarget.transform.position);
 
-        StartCoroutine(attack.ContiniousAttack(objectiveTarget));
+        if (attackCoroutine != null)
+        {
+            StopCoroutine(attackCoroutine);
+        }
+        attackCoroutine = StartCoroutine(attack.ContiniousAttack(objectiveTarget));
 
         Comp_UnitInfo target_cui = objectiveTarget.GetComponent<Comp_UnitInfo>();
 
         while(target_cui.Health > 0)
         {
 
+//            Debug.Log("-af-");
+
             if (!coroutineTalkIsMovingOnObjective)
             {
+//                Debug.Log("perkele");
                 yield break;
             }
 
-            Debug.Log("ASFHUDHSGIUHE");
+//            Debug.Log("ASFHUDHSGIUHE");
 
             movement.MoveTo(objectiveTarget.transform.position);
 
@@ -79,10 +92,10 @@ public class AiController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger Enter Detected: " + gameObject.name + " found " + collision.gameObject.name);
+//        Debug.Log("Trigger Enter Detected: " + gameObject.name + " found " + collision.gameObject.name);
         if (collision.gameObject.layer == sensorFilter.layerMask.value && !collision.isTrigger)
         {
-            Debug.Log("They are touching");
+//            Debug.Log("They are touching");
             if (collision.gameObject.GetComponent<Comp_UnitInfo>().Health > 0)
             {
                 StartCoroutine(AttackDistraction(collision.gameObject));
@@ -120,10 +133,10 @@ public class AiController : MonoBehaviour
                                         StartCoroutine(AttackDistraction(livingEnemy));
                                     }
                 */
-                Debug.Log("Got here");
+//                Debug.Log("Got here");
                     /*else*/ if (!coroutineTalkIsMovingOnObjective && objectiveTarget != null)
                     {
-                    Debug.Log("asdf");
+//                    Debug.Log("asdf");
                         StartCoroutine(AttackObjective());
                     } else if (objectiveTarget == null) {
 //                    yield return null;
@@ -167,15 +180,19 @@ public class AiController : MonoBehaviour
 
         movement.SetAcceptedRange(attack.GetRange());
 
-        if (objectiveTarget == null) {
+        if (objectiveTarget == null && LayerMask.LayerToName(gameObject.layer) == "EnemyUnit") {
             objectiveTarget = GameObject.FindGameObjectWithTag("Train");
         }
 
         StartCoroutine(attackObjectiveWithDistractions());
 
 
-//        movement.MoveTo(attackVictim.transform.position);
-//        StartCoroutine(attack.ContiniousAttack(attackVictim));
+        //        movement.MoveTo(attackVictim.transform.position);
+        //                if (attackCoroutine != null)
+        //{
+        //    StopCoroutine(attackCoroutine);
+        //}
+        //attackCoroutine = StartCoroutine(attack.ContiniousAttack(attackVictim));
     }
 
     // Update is called once per frame
