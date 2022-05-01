@@ -3,20 +3,21 @@ using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
 {
-    private static Image HealthBarImage;
+    private Slider HealthBar;
 
+    private Comp_UnitInfo trainInfo;
     /// <summary>
     /// Sets the health bar value
     /// </summary>
     /// <param name="value">should be between 0 to 1</param>
-    public static void SetHealthBarValue(float value)
+    public void SetHealthBarValue(float value)
     {
-        HealthBarImage.fillAmount = value;
-        if (HealthBarImage.fillAmount < 0.2f)
+        HealthBar.value = value;
+        if (value/HealthBar.maxValue < 0.2)
         {
             SetHealthBarColor(Color.red);
         }
-        else if (HealthBarImage.fillAmount < 0.4f)
+        else if (value / HealthBar.maxValue < 0.4f)
         {
             SetHealthBarColor(Color.yellow);
         }
@@ -26,18 +27,18 @@ public class HealthBarController : MonoBehaviour
         }
     }
 
-    public static float GetHealthBarValue()
+    public float GetHealthBarValue()
     {
-        return HealthBarImage.fillAmount;
+        return HealthBar.value;
     }
 
     /// <summary>
     /// Sets the health bar color
     /// </summary>
     /// <param name="healthColor">Color </param>
-    public static void SetHealthBarColor(Color healthColor)
+    public void SetHealthBarColor(Color healthColor)
     {
-        HealthBarImage.color = healthColor;
+        HealthBar.fillRect.GetComponent<Image>().color = healthColor;
     }
 
     /// <summary>
@@ -45,6 +46,14 @@ public class HealthBarController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        HealthBarImage = GetComponent<Image>();
+        HealthBar = GetComponent<Slider>();
+
+        trainInfo = GameObject.FindWithTag("Train").GetComponent<Comp_UnitInfo>();
+        HealthBar.maxValue = trainInfo.Health;
+    }
+
+    private void Update()
+    {
+        SetHealthBarValue(trainInfo.Health);
     }
 }

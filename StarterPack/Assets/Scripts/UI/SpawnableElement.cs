@@ -21,8 +21,9 @@ public class SpawnableElement : MonoBehaviour
         text.text = spn.SpawnCost.ToString();
     }
 
-    private void OnMouseDown()
+    public void clickevent()
     {
+        Debug.Log("Clicked");
         spawnerController.SetSelectedIndex(thisItemIndex);
     }
 
