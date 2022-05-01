@@ -13,7 +13,6 @@ public class RunManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         /*for (int i = 0; i < Constants.Levels; ++i) {
             GameObject Tier = new GameObject("Tier" + i);
             Tier.AddComponent<Tier>();
@@ -57,6 +56,13 @@ public class RunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int currentTier = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier;
+        foreach (GameObject levelTier in GameObject.FindGameObjectsWithTag("Tier"))
+        {
+            if (levelTier.GetComponent<Tier>().tier > currentTier)
+            {
+                levelTier.SetActive(false);
+            }
+        }
     }
 }

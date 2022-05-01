@@ -5,29 +5,44 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+
+    [Header("Info")]
+    [SerializeField] public GameObject _engine;
+
+    [Header("Mazin Extra Stuff")]
     public List<Constants.AlienTypes> units;
     public float trainHP;
     public float trainSpeed;
     public float trainArmour;
     public int upgradePoints;
     public float currentMoney;
+    public int tier;
+    public float difficulty;
     public List<Bonus> bonuses;
 
     private void Awake() {
         GameObject[] managers = GameObject.FindGameObjectsWithTag("GameManager");
-        if (managers.Length == 0) {
-            units.Add(Constants.AlienTypes.HAMSTER);
-            trainHP = Constants.StartHP;
-            trainSpeed = Constants.StartSpeed;
-            trainArmour = Constants.StartArmour;
-            upgradePoints = Constants.StartUpgrades;
-            currentMoney = Constants.StartMoney;
-            bonuses = new List<Bonus>();
-            bonuses.Add(new Bonus(Constants.AlienTypes.TRAIN, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
-            bonuses.Add(new Bonus(Constants.AlienTypes.HAMSTER, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+
+        if (managers.Length > 1)
+        {
+            Destroy(this.gameObject);
         }
+
         DontDestroyOnLoad(this.gameObject);
+
+        _engine.SetActive(false);
+
+        //if (managers.Length == 0) {
+        //    units.Add(Constants.AlienTypes.HAMSTER);
+        //    trainHP = Constants.StartHP;
+        //    trainSpeed = Constants.StartSpeed;
+        //    trainArmour = Constants.StartArmour;
+        //    upgradePoints = Constants.StartUpgrades;
+        //    currentMoney = Constants.StartMoney;
+        //    bonuses = new List<Bonus>();
+        //    bonuses.Add(new Bonus(Constants.AlienTypes.TRAIN, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+        //    bonuses.Add(new Bonus(Constants.AlienTypes.HAMSTER, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+        //}
     }
 
     // Start is called before the first frame update
@@ -60,7 +75,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void instantiatePlayer() {
-        GameObject.Instantiate(player);
+        //GameObject.Instantiate(player);
     }
 
     public class Bonus
