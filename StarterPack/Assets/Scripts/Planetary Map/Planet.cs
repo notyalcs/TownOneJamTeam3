@@ -33,12 +33,15 @@ public class Planet : MonoBehaviour
         {
             case 1:
                 audioManager.Stage1MusicPlay();
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(true);
                 break;
             case 2:
                 audioManager.PitStopMusicStart();
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(false);
                 break;
             case 3:
                 audioManager.Stage2MusicPlay();
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(true);
                 break;
             default:
                 break;

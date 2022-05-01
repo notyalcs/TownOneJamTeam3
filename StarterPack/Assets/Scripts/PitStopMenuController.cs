@@ -10,6 +10,12 @@ public class PitStopMenuController : MonoBehaviour
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(true);
         GameObject.FindGameObjectWithTag("Train").GetComponent<Comp_UnitInfo>().Health += 50;
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(false);
+
+        var audio = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
+        audio.PitStopMusicStop();
+        audio.ButtonSFX();
+        audio.MenuMusicStart();
+
         NextScene();
     }
     public void NextScene()

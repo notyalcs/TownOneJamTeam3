@@ -281,6 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d856a744ab503824d8b88b5192fa0fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &130830220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3203803483339163073, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+  m_PrefabInstance: {fileID: 456575173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &283554499
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +416,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Train
       objectReference: {fileID: 0}
+    - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _cannonBase
+      value: 
+      objectReference: {fileID: 130830220}
+    - target: {fileID: 5347428368336046532, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _unitCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347428368336046532, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _unitPrefab
+      value: 
+      objectReference: {fileID: 6150006492604756725, guid: 9634d3a4f0657854e80c6c73b445f21f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
 --- !u!1 &545461618
@@ -956,6 +973,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1911537392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2637091628744249389, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+  m_PrefabInstance: {fileID: 456575173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911537397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911537392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b23470e4ca8b74c99aa691e5227565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Species: 0
+  Health: 200
+  Armor: 0
+  AttackDamage: 0
+  AttackRange: 0
+  AttackSpeed: 0
+  Speed: 0
 --- !u!114 &2028567429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8036871303595345272, guid: b569434b8f3ecca41ae7a23b9f5d7f41, type: 3}
