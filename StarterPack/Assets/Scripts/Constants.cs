@@ -34,4 +34,5 @@ public static class Constants
     public static float StartArmour = 0f;
     public static int StartUpgrades = 2;
     public static float StartMoney = 100f;
+    public static float WaitTime = 5f;
 }
