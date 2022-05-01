@@ -8,7 +8,7 @@ public class HealthTest : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("-")) {
-            HealthBarController.SetHealthBarValue(HealthBarController.GetHealthBarValue() - 0.01f);
+//            HealthBarController.SetHealthBarValue(HealthBarController.GetHealthBarValue() - 0.01f);
 
         }
     }
