@@ -33,4 +33,10 @@ public class Comp_EnemySpawner : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position, new Vector3(0.5f, 0.5f, 0));
+    }
+
 }
