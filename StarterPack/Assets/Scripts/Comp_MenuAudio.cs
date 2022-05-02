@@ -16,6 +16,7 @@ public class Comp_MenuAudio : MonoBehaviour
 
     [Header("SFX")]
     [SerializeField] private AudioSource _spawnSFX;
+    [SerializeField] private AudioSource _spawnSlarkSFX;
 
     private void Awake()
     {
@@ -77,5 +78,9 @@ public class Comp_MenuAudio : MonoBehaviour
     public void SpawnSFX()
     {
         _spawnSFX.Play();
+    }
+    public void SpawnSlarkSFX()
+    {
+        _spawnSlarkSFX.Play();
     }
 }

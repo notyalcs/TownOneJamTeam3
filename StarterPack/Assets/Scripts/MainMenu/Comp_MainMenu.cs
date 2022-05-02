@@ -10,6 +10,11 @@ public class Comp_MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void QuitButton() {
         Debug.Log("quit");
         Application.Quit();

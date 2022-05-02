@@ -425,6 +425,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5309291679501435754, guid: 5f872a22d27374049b326e79f77989ae, type: 3}
     - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _cannonDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
       propertyPath: _unitPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1166,10 +1170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 918812934, guid: b569434b8f3ecca41ae7a23b9f5d7f41, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: fb55dafc76c722d45a0b7ea0052fb727, type: 3}
     - target: {fileID: 8036871303595345273, guid: b569434b8f3ecca41ae7a23b9f5d7f41, type: 3}
       propertyPath: m_RootOrder
       value: 0

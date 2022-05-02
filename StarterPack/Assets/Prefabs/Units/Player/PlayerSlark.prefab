@@ -101,13 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b23470e4ca8b74c99aa691e5227565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Species: 1
-  Health: 50
+  Species: 4
+  Health: 75
   Armor: 0
-  AttackDamage: 10
-  AttackRange: 1
-  AttackSpeed: 0.75
-  Speed: 6
+  AttackDamage: 15
+  AttackRange: 2
+  AttackSpeed: 1
+  Speed: 8
   Money: 0
 --- !u!114 &1322128655239839829
 MonoBehaviour:

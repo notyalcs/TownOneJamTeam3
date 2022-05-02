@@ -35,13 +35,15 @@ public class EndTrigger : MonoBehaviour
         {
             audio.GetComponent<Comp_MenuAudio>().Stage1MusicStop();
             audio.GetComponent<Comp_MenuAudio>().MenuMusicStart();
+            SceneManager.LoadScene("Demo Starmap");
         } 
         else
         {
             audio.GetComponent<Comp_MenuAudio>().Stage2MusicStop();
             audio.GetComponent<Comp_MenuAudio>().MenuMusicStart();
+            SceneManager.LoadScene("CreditsScene");
         }
 
-        SceneManager.LoadScene("Demo Starmap");
+        
     }
 }

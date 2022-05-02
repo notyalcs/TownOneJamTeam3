@@ -32,7 +32,16 @@ public class Comp_Spawner : MonoBehaviour
     private IEnumerator InstantiateUnit() {
 
         var audio = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
-        audio.SpawnSFX();
+
+        if (_unitPrefab.GetComponent<Comp_UnitInfo>().Species == Constants.AlienTypes.HAMSTER)
+        {
+            audio.SpawnSFX();
+        } else
+        {
+            audio.SpawnSlarkSFX();
+        }
+
+        
 
         for (int i = 0; i < _unitCount; ++i) {
             //audio.SpawnSFX();

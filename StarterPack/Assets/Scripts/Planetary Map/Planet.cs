@@ -51,7 +51,7 @@ public class Planet : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier > Constants.Levels) { return; }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().difficulty = gameObject.GetComponentInParent<Tier>().Difficulty;
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier = gameObject.GetComponentInParent<Tier>().tier + 1;
-        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier > 3) {
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier > 4) {
             SceneManager.LoadScene("CreditsScene");
         } else {
             SceneManager.LoadScene(SceneName);

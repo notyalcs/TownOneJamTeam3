@@ -42,7 +42,7 @@ public class Comp_SpawnerController : MonoBehaviour
                 newSpawner.GetComponent<Comp_Spawner>()._delay = 1.5f;
                 newSpawner.GetComponent<Comp_Spawner>()._distanceMultiplier = 5f;
                 newSpawner.GetComponent<Comp_Spawner>()._unitCount = 1;
-                newSpawner.GetComponent<Comp_Spawner>().SpawnCost = 10f;
+                newSpawner.GetComponent<Comp_Spawner>().SpawnCost = 4f;
                 newSpawner.GetComponent<Comp_Spawner>()._unitPrefab = _unitPrefabs[0];
                 break;
             default:
