@@ -29,6 +29,8 @@ public class Planet : MonoBehaviour
         audioManager.ButtonSFX();
         audioManager.MenuMusicStop();
 
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.GetComponent<Train>()._curPosition = 0.0f;
+
         switch (gameObject.GetComponentInParent<Tier>().tier)
         {
             case 1:
@@ -42,7 +44,6 @@ public class Planet : MonoBehaviour
             case 3:
                 audioManager.Stage2MusicPlay();
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(true);
-                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.GetComponent<Train>()._curPosition = 0.0f;
                 break;
             default:
                 break;

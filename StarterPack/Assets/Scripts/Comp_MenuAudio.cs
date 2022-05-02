@@ -35,8 +35,22 @@ public class Comp_MenuAudio : MonoBehaviour
         MenuMusicStart();
     }
 
+    public void CreditsSceneStart() {
+        _menuMusic.Stop();
+        _stage1Music.Stop();
+        _stage2Music.Stop();
+        _pitStopMusic.Stop();
+
+        _pitStopMusic.Play();
+    }
+
     public void MenuMusicStart()
     {
+        _menuMusic.Stop();
+        _stage1Music.Stop();
+        _stage2Music.Stop();
+        _pitStopMusic.Stop();
+
         _menuMusic.Play();
     }
     public void MenuMusicStop()

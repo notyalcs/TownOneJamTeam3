@@ -436,6 +436,10 @@ PrefabInstance:
       propertyPath: _unitPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 6150006492604756725, guid: 00edb02c92addd347b59df6048427976, type: 3}
+    - target: {fileID: 2637091628744249386, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _speed
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5347428368336046532, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
       propertyPath: _unitCount
       value: 3
@@ -1011,7 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 0
-  Health: 200
+  Health: 400
   Armor: 0
   AttackDamage: 0
   AttackRange: 0
