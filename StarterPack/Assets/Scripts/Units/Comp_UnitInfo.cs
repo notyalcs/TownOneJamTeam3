@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Comp_UnitInfo : MonoBehaviour
 {
@@ -13,12 +14,22 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public float AttackRange;
     [SerializeField] public float AttackSpeed;
     [SerializeField] public float Speed;
+    [SerializeField] public float Money;
 
-    [SerializeField] public void TakeDamage(float DamageToTake)
+    [SerializeField] public virtual void TakeDamage(float DamageToTake)
     {
         Health -= DamageToTake;
         if(Health <= 0)
         {
+            if (gameObject.layer == 13) // enemy layer
+            {
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().currentMoney += Money;
+            }
+            if(Species == Constants.AlienTypes.TRAIN)
+            {
+                Debug.Log("AFSNSDHGUHG");
+                SceneManager.LoadScene("CreditsScene");
+            }
             Destroy(gameObject);
         }
     }

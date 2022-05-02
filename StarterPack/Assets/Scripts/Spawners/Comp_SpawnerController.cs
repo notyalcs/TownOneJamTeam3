@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Comp_SpawnerController : MonoBehaviour
 {
+    [Header("UI Setup")]
+    [SerializeField] private GameObject _buttonContainerInstance;
+    [SerializeField] private GameObject _selectionItemPrefab;
 
     [Header("Spawners")]
     [SerializeField] private int _activeSpawner = 0;
     [SerializeField] private List<Comp_Spawner> _spawners;
+    [SerializeField] private List<GameObject> _unitPrefabs;
+    [SerializeField] private GameObject _spawnerPrefab;
 
     [Header("Cannon")]
     [SerializeField] private GameObject _cannonBase;
@@ -28,6 +33,41 @@ public class Comp_SpawnerController : MonoBehaviour
     private void Start() {
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
+    }
+
+    public void AddSpawner(Constants.AlienTypes species) {
+        GameObject newSpawner = Instantiate(_spawnerPrefab, gameObject.transform);
+        switch (species) {
+            case Constants.AlienTypes.STRONG:
+                newSpawner.GetComponent<Comp_Spawner>()._delay = 1.5f;
+                newSpawner.GetComponent<Comp_Spawner>()._distanceMultiplier = 5f;
+                newSpawner.GetComponent<Comp_Spawner>()._unitCount = 1;
+                newSpawner.GetComponent<Comp_Spawner>().SpawnCost = 4f;
+                newSpawner.GetComponent<Comp_Spawner>()._unitPrefab = _unitPrefabs[0];
+                break;
+            default:
+                break;
+        }
+
+        _spawners.Add(newSpawner.GetComponent<Comp_Spawner>());
+    }
+
+    public void LevelStart()
+    {
+        _buttonContainerInstance = GameObject.FindGameObjectWithTag("AddableContaier");
+        _playerController = GetComponent<Comp_PlayerController>();
+        _activeSpawner = 0;
+        for (int i = 0; i < _spawners.Count; i++)
+        {
+            GameObject fresh = Instantiate(_selectionItemPrefab);
+            fresh.GetComponent<SpawnableElement>().Initialize(_spawners[i], i, this);
+            fresh.transform.parent = _buttonContainerInstance.transform;
+        }
+    }
+
+    public void SetSelectedIndex(int index)
+    {
+        _activeSpawner = index;
     }
 
     private void Update() {

@@ -1,5 +1,3 @@
-#define DEBUG
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +8,12 @@ public class Train : MonoBehaviour
     [SerializeField] private float _health;
 
     [Header("Train Movement")]
-    [SerializeField] private TrainPath _path;
+    [SerializeField] public TrainPath _path;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _followDistance;
 
-    private float _curPosition = 0.0f;
+    public float _curPosition = 0.0f;
 
     [SerializeField] private Train _head;
     [SerializeField] private Train _tail;
@@ -30,15 +28,16 @@ public class Train : MonoBehaviour
     private enum TrainType
     { 
         Engine,
-        Follow1,
-        Follow2,
+        Passenger,
+        Cart,
+        Caboose,
         Count
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -47,12 +46,12 @@ public class Train : MonoBehaviour
 #if DEBUG
         if (Input.GetAxisRaw("Fire1") != 0)
         {
-            _curPosition = 0.0f;
+            // _curPosition = 0.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.P) && _tail == null)
         {
-            AddFollowTrain(TrainType.Engine);
+            AddFollowTrain(TrainType.Passenger);
         }
 #endif
 
@@ -99,8 +98,8 @@ public class Train : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(_back, 0.2f);
+        Gizmos.DrawSphere(_back, 0.5f);
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(_front, 0.2f);
+        Gizmos.DrawSphere(_front, 0.5f);
     }
 }

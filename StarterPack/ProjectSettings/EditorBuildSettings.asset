@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4415b2509fd59b048a198aaa343cda33
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Demo Starmap.unity
+    guid: 1b513fb8eb9885846be08e78adc8ce8a
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 514c4ac45f9caaf47af14a59e644b865
+  - enabled: 1
+    path: Assets/Scenes/TempLevel.unity
+    guid: d0f300610dc765040bf78aef3d41da67
+  - enabled: 1
+    path: Assets/Scenes/PitStopMenu.unity
+    guid: ccf97ceb063e81748a8f056b1bfbac33
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 38520e585811bb84a807410a72493014
   m_configObjects: {}

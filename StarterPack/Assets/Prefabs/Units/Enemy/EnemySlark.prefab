@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.6509434, g: 0, b: 0.44268888, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 06113460dbf74f24aba9bcda5b62005d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,13 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b23470e4ca8b74c99aa691e5227565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Species: 0
+  Species: 1
   Health: 50
   Armor: 0
-  AttackDamage: 10
-  AttackRange: 0.1
+  AttackDamage: 8
+  AttackRange: 1
   AttackSpeed: 0.75
-  Speed: 1
+  Speed: 6
+  Money: 10
 --- !u!114 &1322128655239839829
 MonoBehaviour:
   m_ObjectHideFlags: 0
