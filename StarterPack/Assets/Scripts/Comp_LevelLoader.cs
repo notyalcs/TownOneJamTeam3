@@ -25,6 +25,8 @@ public class Comp_LevelLoader : MonoBehaviour
         _camera.GetComponent<Awesome2DCamera>().target = engine.transform;
 
         engine.GetComponent<Train>()._path = _path.GetComponent<TrainPath>();
+
+        engine.GetComponentInChildren<Comp_SpawnerController>().LevelStart();
     }
 
 }

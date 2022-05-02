@@ -42,11 +42,13 @@ public class Planet : MonoBehaviour
             case 3:
                 audioManager.Stage2MusicPlay();
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.SetActive(true);
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>()._engine.GetComponent<Train>()._curPosition = 0.0f;
                 break;
             default:
                 break;
         }
 
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier > Constants.Levels) { return; }
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().difficulty = gameObject.GetComponentInParent<Tier>().Difficulty;
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().tier = gameObject.GetComponentInParent<Tier>().tier + 1;
         SceneManager.LoadScene(SceneName);

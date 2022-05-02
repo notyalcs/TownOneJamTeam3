@@ -11,6 +11,8 @@ public class Comp_SpawnerController : MonoBehaviour
     [Header("Spawners")]
     [SerializeField] private int _activeSpawner = 0;
     [SerializeField] private List<Comp_Spawner> _spawners;
+    [SerializeField] private List<GameObject> _unitPrefabs;
+    [SerializeField] private Comp_Spawner _spawnerPrefab;
 
     [Header("Cannon")]
     [SerializeField] private GameObject _cannonBase;
@@ -29,10 +31,32 @@ public class Comp_SpawnerController : MonoBehaviour
     private Vector3 _spawnDirection;
 
     private void Start() {
+        _playerController = GetComponent<Comp_PlayerController>();
+        _activeSpawner = 0;
+    }
+
+    public void AddSpawner(Constants.AlienTypes species) {
+        Comp_Spawner newSpawner = Instantiate(_spawnerPrefab);
+        switch (species) {
+            case Constants.AlienTypes.STRONG:
+                newSpawner._delay = 1.5f;
+                newSpawner._distanceMultiplier = 5f;
+                newSpawner._unitCount = 1;
+                newSpawner.SpawnCost = 10f;
+                newSpawner._unitPrefab = _unitPrefabs[0];
+                break;
+            default:
+                break;
+        }
+        _spawners.Add(newSpawner);
+    }
+
+    public void LevelStart()
+    {
         _buttonContainerInstance = GameObject.FindGameObjectWithTag("AddableContaier");
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
-        for(int i = 0; i < _spawners.Count; i++)
+        for (int i = 0; i < _spawners.Count; i++)
         {
             GameObject fresh = Instantiate(_selectionItemPrefab);
             fresh.GetComponent<SpawnableElement>().Initialize(_spawners[i], i, this);

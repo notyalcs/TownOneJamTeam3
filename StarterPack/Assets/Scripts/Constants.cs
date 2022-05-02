@@ -27,7 +27,7 @@ public static class Constants
         Lontos,
         Earth
     }
-    public static int Levels = 6;
+    public static int Levels = 3;
     public static int StartNodes = 3;
     public static float StartHP = 100f;
     public static float StartSpeed = 0.5f;
