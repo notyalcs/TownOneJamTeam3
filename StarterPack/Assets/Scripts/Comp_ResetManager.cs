@@ -11,4 +11,9 @@ public class Comp_ResetManager : MonoBehaviour
         Comp_MenuAudio audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
         audioManager.CreditsSceneStart();
     }
+
+    public void RestartButton() {
+        Comp_MenuAudio audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
+        audioManager.MenuMusicStart();
+    }
 }
