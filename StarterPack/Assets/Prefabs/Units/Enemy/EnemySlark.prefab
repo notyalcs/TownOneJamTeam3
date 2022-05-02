@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b23470e4ca8b74c99aa691e5227565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Species: 0
+  Species: 1
   Health: 50
   Armor: 0
   AttackDamage: 8
