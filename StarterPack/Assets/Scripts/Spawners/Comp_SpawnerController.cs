@@ -12,7 +12,7 @@ public class Comp_SpawnerController : MonoBehaviour
     [SerializeField] private int _activeSpawner = 0;
     [SerializeField] private List<Comp_Spawner> _spawners;
     [SerializeField] private List<GameObject> _unitPrefabs;
-    [SerializeField] private Comp_Spawner _spawnerPrefab;
+    [SerializeField] private GameObject _spawnerPrefab;
 
     [Header("Cannon")]
     [SerializeField] private GameObject _cannonBase;
@@ -36,19 +36,20 @@ public class Comp_SpawnerController : MonoBehaviour
     }
 
     public void AddSpawner(Constants.AlienTypes species) {
-        Comp_Spawner newSpawner = Instantiate(_spawnerPrefab);
+        GameObject newSpawner = Instantiate(_spawnerPrefab, gameObject.transform);
         switch (species) {
             case Constants.AlienTypes.STRONG:
-                newSpawner._delay = 1.5f;
-                newSpawner._distanceMultiplier = 5f;
-                newSpawner._unitCount = 1;
-                newSpawner.SpawnCost = 10f;
-                newSpawner._unitPrefab = _unitPrefabs[0];
+                newSpawner.GetComponent<Comp_Spawner>()._delay = 1.5f;
+                newSpawner.GetComponent<Comp_Spawner>()._distanceMultiplier = 5f;
+                newSpawner.GetComponent<Comp_Spawner>()._unitCount = 1;
+                newSpawner.GetComponent<Comp_Spawner>().SpawnCost = 10f;
+                newSpawner.GetComponent<Comp_Spawner>()._unitPrefab = _unitPrefabs[0];
                 break;
             default:
                 break;
         }
-        _spawners.Add(newSpawner);
+
+        _spawners.Add(newSpawner.GetComponent<Comp_Spawner>());
     }
 
     public void LevelStart()
