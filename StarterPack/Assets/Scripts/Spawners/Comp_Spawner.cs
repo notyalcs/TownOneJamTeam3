@@ -5,13 +5,13 @@ using UnityEngine;
 public class Comp_Spawner : MonoBehaviour
 {
     [Header("Spawn Info")]
-    [SerializeField] private float _delay = 0.1f;
-    [SerializeField] private float _distanceMultiplier = 10.0f;
-    [SerializeField] private float _angleOffset = 1.0f;
+    [SerializeField] public float _delay = 0.1f;
+    [SerializeField] public float _distanceMultiplier = 10.0f;
+    [SerializeField] public float _angleOffset = 1.0f;
 
     [Header("Unit Info")]
     [SerializeField] public GameObject _unitPrefab;
-    [SerializeField] private int _unitCount = 5;
+    [SerializeField] public int _unitCount = 5;
 
     [Header("Cost")]
     [SerializeField] public float SpawnCost = 10.0f;
