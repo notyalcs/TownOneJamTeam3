@@ -29,10 +29,16 @@ public class Comp_SpawnerController : MonoBehaviour
     private Vector3 _spawnDirection;
 
     private void Start() {
+        _playerController = GetComponent<Comp_PlayerController>();
+        _activeSpawner = 0;
+    }
+
+    public void LevelStart()
+    {
         _buttonContainerInstance = GameObject.FindGameObjectWithTag("AddableContaier");
         _playerController = GetComponent<Comp_PlayerController>();
         _activeSpawner = 0;
-        for(int i = 0; i < _spawners.Count; i++)
+        for (int i = 0; i < _spawners.Count; i++)
         {
             GameObject fresh = Instantiate(_selectionItemPrefab);
             fresh.GetComponent<SpawnableElement>().Initialize(_spawners[i], i, this);

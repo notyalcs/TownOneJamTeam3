@@ -107,7 +107,7 @@ MonoBehaviour:
   AttackDamage: 7
   AttackRange: 0.1
   AttackSpeed: 1
-  Speed: 2
+  Speed: 6
 --- !u!114 &1322128655239839829
 MonoBehaviour:
   m_ObjectHideFlags: 0

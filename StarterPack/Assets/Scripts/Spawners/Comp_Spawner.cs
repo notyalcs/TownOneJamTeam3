@@ -30,7 +30,12 @@ public class Comp_Spawner : MonoBehaviour
     }
 
     private IEnumerator InstantiateUnit() {
+
+        var audio = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<Comp_MenuAudio>();
+        audio.SpawnSFX();
+
         for (int i = 0; i < _unitCount; ++i) {
+            //audio.SpawnSFX();
             _position = GetComponentInParent<Transform>().position;
             Vector3 spawnLocation = new Vector3(_spawnDirection.x + Random.value * _angleOffset, _spawnDirection.y + Random.value * _angleOffset, 0) * (Random.value * _distanceMultiplier);
             Instantiate(_unitPrefab, spawnLocation + _position, Quaternion.identity);

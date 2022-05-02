@@ -14,6 +14,9 @@ public class Comp_MenuAudio : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private AudioSource _buttonSFX;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource _spawnSFX;
+
     private void Awake()
     {
         var audio = GameObject.FindGameObjectsWithTag("AudioManager");
@@ -70,5 +73,9 @@ public class Comp_MenuAudio : MonoBehaviour
     public void ButtonSFX()
     {
         _buttonSFX.Play();
+    }
+    public void SpawnSFX()
+    {
+        _spawnSFX.Play();
     }
 }
