@@ -108,6 +108,7 @@ MonoBehaviour:
   AttackRange: 0.1
   AttackSpeed: 0.75
   Speed: 1
+  Money: 5
 --- !u!114 &1322128655239839829
 MonoBehaviour:
   m_ObjectHideFlags: 0
