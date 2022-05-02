@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PitStopMenu.unity
     guid: ccf97ceb063e81748a8f056b1bfbac33
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 38520e585811bb84a807410a72493014
   m_configObjects: {}
