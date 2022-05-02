@@ -105,7 +105,7 @@ MonoBehaviour:
   Health: 20
   Armor: 0
   AttackDamage: 7
-  AttackRange: 0.1
+  AttackRange: 1
   AttackSpeed: 1
   Speed: 6
 --- !u!114 &1322128655239839829

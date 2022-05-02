@@ -13,7 +13,7 @@ public class Train : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _followDistance;
 
-    private float _curPosition = 0.0f;
+    public float _curPosition = 0.0f;
 
     [SerializeField] private Train _head;
     [SerializeField] private Train _tail;
