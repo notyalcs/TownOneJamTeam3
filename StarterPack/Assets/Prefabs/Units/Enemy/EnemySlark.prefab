@@ -104,10 +104,11 @@ MonoBehaviour:
   Species: 0
   Health: 50
   Armor: 0
-  AttackDamage: 10
-  AttackRange: 0.1
+  AttackDamage: 8
+  AttackRange: 1
   AttackSpeed: 0.75
-  Speed: 1
+  Speed: 10
+  Money: 5
 --- !u!114 &1322128655239839829
 MonoBehaviour:
   m_ObjectHideFlags: 0
