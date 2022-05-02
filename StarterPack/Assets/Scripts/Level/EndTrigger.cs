@@ -28,6 +28,8 @@ public class EndTrigger : MonoBehaviour
 
         var audio = GameObject.FindGameObjectWithTag("AudioManager");
         var gm = GameObject.FindGameObjectWithTag("GameManager");
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Comp_SpawnerController>();
+        player.AddSpawner(Constants.AlienTypes.STRONG);
 
         if (gm.GetComponent<GameManager>().tier == 2)
         {

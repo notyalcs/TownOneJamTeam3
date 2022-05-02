@@ -13,12 +13,18 @@ public class Comp_UnitInfo : MonoBehaviour
     [SerializeField] public float AttackRange;
     [SerializeField] public float AttackSpeed;
     [SerializeField] public float Speed;
+    [SerializeField] public float Money;
 
     [SerializeField] public virtual void TakeDamage(float DamageToTake)
     {
         Health -= DamageToTake;
         if(Health <= 0)
         {
+            if (gameObject.layer == 13) // enemy layer
+            {
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().currentMoney += Money;
+            }
+
             Destroy(gameObject);
         }
     }
