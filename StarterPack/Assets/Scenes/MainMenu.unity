@@ -420,6 +420,18 @@ PrefabInstance:
       propertyPath: _cannonBase
       value: 
       objectReference: {fileID: 130830220}
+    - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _spawnerPrefab
+      value: 
+      objectReference: {fileID: 5309291679501435754, guid: 5f872a22d27374049b326e79f77989ae, type: 3}
+    - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _unitPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979227310306243398, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
+      propertyPath: _unitPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6150006492604756725, guid: 00edb02c92addd347b59df6048427976, type: 3}
     - target: {fileID: 5347428368336046532, guid: 1e76aa24aedaf9047994a7834e934db3, type: 3}
       propertyPath: _unitCount
       value: 3
@@ -1001,6 +1013,7 @@ MonoBehaviour:
   AttackRange: 0
   AttackSpeed: 0
   Speed: 0
+  Money: 0
 --- !u!114 &2028567429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8036871303595345272, guid: b569434b8f3ecca41ae7a23b9f5d7f41, type: 3}
